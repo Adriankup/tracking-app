@@ -2,6 +2,7 @@
   "name": "tracking_app",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-free-webfonts": "^1.0.9",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",

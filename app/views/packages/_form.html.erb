@@ -1,0 +1,31 @@
+<%= form_for @package do |f| %>
+<div class="row">
+    <div class="col-md-12">
+        <% if @package.errors.any? %>
+        <div id="error_explanation">
+            <h2><%= pluralize(@package.errors.count, "error") %> prohibited this attention type from being saved:
+            </h2>
+
+            <ul>
+                <% @package.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+                <% end %>
+            </ul>
+        </div>
+        <% end %>
+    </div>
+    <div class="col-md-12">
+        <div class="form-group">
+            <%= f.label :file, "Archivo", class: 'control-label' %><br />
+            <%= f.file_field :file, accept: 'json', class: 'form-control' %>
+        </div>
+    </div>
+    <div class="col-md-12 text-right">
+        <%= link_to "Atras", welcome_path , class: "btn btn-danger"%>
+        <%= f.submit "Guardar", class: 'btn btn-primary' %>
+    </div>
+</div>
+
+
+
+<% end %>
