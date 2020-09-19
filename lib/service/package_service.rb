@@ -10,4 +10,14 @@ class Service::PackageService
       end
     end
   end
+
+  def update_package(package)
+    package = Tracking::Finder.new(package.parcel.downcase.to_sym).track(package.guide_number)
+    package.save!
+  end
+
+  def delete_package(package)
+    package.destroy!
+  end
+
 end

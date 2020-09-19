@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  get '/welcome', to: 'home#index'
 
-  resources :packages, only: %i[new create]
+  root "packages#index"
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  resources :packages, only: %i[index new create update destroy]
 end
