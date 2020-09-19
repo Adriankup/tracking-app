@@ -1,0 +1,15 @@
+<tr class="font-weight-light">
+    <td><%= package.parcel %></td>
+    <td><%= package.guide_number %></td>
+    <td><%= package.status%></td>
+    <td><%= package.description %></td>
+    <td>
+        <%= button_to package_path(package),class:"btn btn-sm  btn-danger", form_class: "d-inline-block", method: :delete, data: { confirm: 'Are you sure?', disable_with: "<i class='fa fa-spinner fa-spin'></i> Eliminando..." } do %>
+            <i class="fa fa-trash"></i>
+        <% end %>
+
+        <%= button_to package_path(package),class:"btn btn-sm btn-primary", form_class: "d-inline-block", method: :put do %>
+        <i class="fas fa-sync"></i>
+        <% end %>
+    </td>
+</tr>
