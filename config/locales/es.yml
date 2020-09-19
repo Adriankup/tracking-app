@@ -1,0 +1,6 @@
+es:
+  controller:
+    created: El registro ha sido creado exitosamente
+    updated: El registro ha sigo actualizado exitosamente
+    destroyed: El registro ha sido eliminado exitosamente
+    uploaded: Las guías han sido cargadas exitosamente       
