@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Service::PackageService do
+RSpec.describe Service::Package do
   context 'Package Service' do
     let!(:package) { create(:package) }
 
@@ -10,7 +10,7 @@ RSpec.describe Service::PackageService do
       file = fixture_file_upload(Rails.root.join('spec/fixtures/files/shipments_data.json'),
                                  'application/json')
 
-      Service::PackageService.new.create_packages(file: file)
+      Service::Package.new.create(file: file)
 
       expect(Package.count).to eq(5)
     end
@@ -18,11 +18,11 @@ RSpec.describe Service::PackageService do
     it 'should update a package' do
       package.parcel = 'fedex'
       package.guide_number = '449044304137821'
-      expect(Service::PackageService.new.update_package(package)).to be(true)
+      expect(Service::Package.new.update(package)).to be(true)
     end
 
     it 'should destroy a package' do
-      expect(Service::PackageService.new.delete_package(package)).to be(package)
+      expect(Service::Package.new.delete(package)).to be(package)
     end
   end
 end

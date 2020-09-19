@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-class Service::PackageService
-  def create_packages(params)
+class Service::Package
+  def create(params)
     shipping_guides = FileFormatter.new(params[:file]).to_format
     Package.transaction do
       shipping_guides.each do |guide|
@@ -11,12 +11,12 @@ class Service::PackageService
     end
   end
 
-  def update_package(package)
+  def update(package)
     package = Tracking::Finder.new(package.parcel.downcase.to_sym).track(package.guide_number)
     package.save!
   end
 
-  def delete_package(package)
+  def delete(package)
     package.destroy!
   end
 

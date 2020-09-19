@@ -11,7 +11,7 @@ class PackagesController < ApplicationController
 
   def create
     respond_to do |format|
-      Service::PackageService.new.create_packages(package_params)
+      service_package.create(package_params)
       format.html { redirect_to packages_path, notice: t('controller.uploaded') }
     rescue StandardError => e
       format.html { redirect_to new_package_path, alert: e.message }
@@ -20,7 +20,7 @@ class PackagesController < ApplicationController
 
   def update
     respond_to do |format|
-      Service::PackageService.new.update_package(@package)
+      service_package.update(@package)
       format.html { redirect_to packages_path, notice: "#{t('controller.updated')}: #{@package.guide_number}" }
     rescue StandardError => e
       format.html { redirect_to packages_path, alert: e.message }
@@ -30,7 +30,7 @@ class PackagesController < ApplicationController
   def destroy
     guide_number = @package.guide_number
     respond_to do |format|
-      Service::PackageService.new.delete_package(@package)
+      service_package.delete(@package)
       format.html { redirect_to packages_path, notice: "#{t('controller.destroyed')}: #{guide_number}" }
     rescue StandardError => e
       format.html { redirect_to packages_path, alert: e.message }
@@ -39,6 +39,10 @@ class PackagesController < ApplicationController
 
   private
 
+  def service_package
+    @service_package ||= Service::Package.new
+  end
+
   def package_params
     params.require(:package).permit(:file)
   end
@@ -46,4 +50,5 @@ class PackagesController < ApplicationController
   def set_package
     @package = Package.find(params[:id])
   end
+
 end
