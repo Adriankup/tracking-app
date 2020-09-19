@@ -24,4 +24,9 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+* Para la ejecución de la aplicación sera necesario configurar las siguientes variables de entorno:
+ - FEDEX_KEY: ''
+ - FEDEX_PASSWORD: ''
+ - FEDEX_ACCOUNT_NUMBER: ''
+ - FEDEX_METER: ''
+ - FEDEX_MODE: 'development'
