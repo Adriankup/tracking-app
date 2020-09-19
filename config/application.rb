@@ -9,10 +9,12 @@ Bundler.require(*Rails.groups)
 module TrackingApp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
+    config.paths.add 'lib', eager_load: true
+
     config.load_defaults 6.0
     config.i18n.default_locale = :es
 
-    config.active_record.default_timezone = :local
+    config.active_record.default_timezone = :local   
 
     config.before_configuration do
       env_file = File.join(Rails.root, "config", "local_env.yml")
