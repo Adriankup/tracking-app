@@ -1,16 +1,13 @@
 <%= form_for @package do |f| %>
 <div class="row">
     <div class="col-md-12">
-        <% if @package.errors.any? %>
-        <div id="error_explanation">
-            <h2><%= pluralize(@package.errors.count, "error") %> prohibited this attention type from being saved:
-            </h2>
+        <% flash.each do |type, msg| %>
+        <div>
+            <div class="alert alert-danger" role="alert">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                Ocurrió un error al procesar la información: <%= msg %>
+            </div>
 
-            <ul>
-                <% @package.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-                <% end %>
-            </ul>
         </div>
         <% end %>
     </div>
@@ -22,7 +19,7 @@
     </div>
     <div class="col-md-12 text-right">
         <%= link_to "Atras", welcome_path , class: "btn btn-danger"%>
-        <%= f.submit "Guardar", class: 'btn btn-primary' %>
+        <%= f.button "Guardar".html_safe, type: :submit, data: { disable_with: "<i class='fa fa-spinner fa-spin'></i> Guardando..." }, class: 'btn btn-primary' %>
     </div>
 </div>
 
