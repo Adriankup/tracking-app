@@ -2,31 +2,40 @@
 
 Aplicación para realizar el seguimiento de guías de envío
 
+Elementos necesarios 📦  
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+* Ruby version: 2.6.6 
+    - se añadio archivo .ruby-version para configuración por defecto de la versión en el proyecto.
 
-* Ruby version
+* Ejecutar:  
+    `bundle install`
 
-* System dependencies
+* Realizar configuración del database yml (Se elimino el versionamiento orignal de archivo por seguridad)
+    - Se añade ejemplo database.yml~
 
-* Configuration
+* Ejucución de los siguientes comandos para la base de datos: 
 
-* Database creation
+     `rake db:create `
 
-* Database initialization
+     `rake db:migrate `
 
-* How to run the test suite
+* Si todos los pasos se realizaron correcamente solo nos queda ejecutar el siguiente comando: 
 
-* Services (job queues, cache servers, search engines, etc.)
+    `Rails s `
 
-* Deployment instructions
 
 * Para la ejecución de la aplicación sera necesario configurar las siguientes variables de entorno:
- - FEDEX_KEY: ''
- - FEDEX_PASSWORD: ''
- - FEDEX_ACCOUNT_NUMBER: ''
- - FEDEX_METER: ''
- - FEDEX_MODE: 'development'
+
+  `FEDEX_KEY: ''`
+  
+  `FEDEX_PASSWORD: ''`
+  
+  `FEDEX_ACCOUNT_NUMBER: ''`
+  
+  `FEDEX_METER: ''`
+  
+  `FEDEX_MODE: 'development'`
+  
+
+Ahora a disfrutar nuestra aplicación 😊 
