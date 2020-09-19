@@ -1,4 +1,4 @@
-require 'services/package_service'
+#require 'services/package_service'
 
 class PackagesController < ApplicationController
   def new
@@ -7,10 +7,10 @@ class PackagesController < ApplicationController
 
   def create
     respond_to do |format|
-      PackageService.new.create_packages(package_params)
+      Service::PackageService.new.create_packages(package_params)
       format.html { redirect_to welcome_path, alert: t('controller.uploaded') }
-    rescue StandardError => e
-      format.html { redirect_to new_package_path, alert: e.message }
+    #rescue StandardError => e
+     # format.html { redirect_to new_package_path, alert: e.message }
     end
   end
 

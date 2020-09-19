@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-class Tracking
-  def initialize; end
+class Tracking::Strategy
+  protected
 
-  def find(data)
+  def track
     raise NotImplementedError, "#{self.class} has not implemented method '#{__method__}'"
   end
 end
