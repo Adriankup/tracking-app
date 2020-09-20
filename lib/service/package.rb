@@ -5,7 +5,7 @@ class Service::Package
     shipping_guides = FileFormatter.new(params[:file]).to_format
     Package.transaction do
       shipping_guides.each do |guide|
-        package = Tracking::Finder.new(guide[:carrier].downcase.to_sym).track(guide[:tracking_number])
+        package = Tracking::Finder.new(guide[:carrier].downcase.to_sym).track(guide[:tracking_number].strip)
         package.save!
       end
     end

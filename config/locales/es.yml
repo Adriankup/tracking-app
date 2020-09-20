@@ -1,6 +1,6 @@
 es:
   controller:
     created: El paquete ha sido creado exitosamente
-    updated: El paquete ha sigo actualizado exitosamente
+    updated: El paquete ha sido actualizado exitosamente
     destroyed: El paquete ha sido eliminado exitosamente
     uploaded: Las guías han sido cargadas exitosamente       

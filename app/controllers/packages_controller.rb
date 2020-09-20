@@ -2,7 +2,7 @@ class PackagesController < ApplicationController
   before_action :set_package, only: %i[update destroy]
 
   def index
-    @packages = Package.all
+    @packages = Package.all.order(updated_at: :desc)
   end
 
   def new
