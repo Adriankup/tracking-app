@@ -6,8 +6,8 @@ default: &default
 
 development:
   <<: *default
-  username: root
-  password: 'C3sark01.'
+  username: user_1
+  password: 'password_1'
   database: tracking_app_dev
   socket: /var/run/mysqld/mysqld.sock
 
@@ -16,8 +16,8 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  username: root
-  password: 'C3sark01.'
+  username: user_1
+  password: 'password_1'
   database: tracking_app_test
   socket: /var/run/mysqld/mysqld.sock
 

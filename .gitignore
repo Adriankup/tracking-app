@@ -36,6 +36,9 @@
 # Ignore local Env
 /config/local_env.yml
 
+# Ignore database.yml
+/config/database.yml
+
 /public/packs
 /public/packs-test
 /node_modules
