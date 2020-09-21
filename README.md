@@ -16,13 +16,13 @@ Elementos necesarios:
 
 * Ejucución de los siguientes comandos para la base de datos: 
 
-     `rake db:create `
+     `rake db:create`
 
-     `rake db:migrate `
+     `rake db:migrate`
 
 * Si todos los pasos se realizaron correcamente solo nos queda ejecutar el siguiente comando: 
 
-    `Rails s `
+    `Rails s`
 
 
 * Para la ejecución de la aplicación sera necesario configurar las siguientes variables de entorno:
@@ -39,6 +39,9 @@ Elementos necesarios:
   
   `FEDEX_MODE: 'development'`
   
+* Ejecute el siguiente comando para la ejecución de Pruebas:
+    `spec spec`
+    
 NOTA: Si la aplicación marca error de webpacker ejecutar el siguiente comando: `bundle exec rails webpacker:install`
 
 Ahora a disfrutar nuestra aplicación 😊 
