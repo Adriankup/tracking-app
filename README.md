@@ -1,8 +1,8 @@
-# TRACKING-APP README
+# 📦 TRACKING-APP README
 
 Aplicación para realizar el seguimiento de guías de envío
 
-Elementos necesarios 📦  
+Elementos necesarios:
 
 
 * Ruby version: 2.6.6 
@@ -26,6 +26,8 @@ Elementos necesarios 📦
 
 
 * Para la ejecución de la aplicación sera necesario configurar las siguientes variables de entorno:
+    - Se añade ejemplo local_env.yml~
+
 
   `FEDEX_KEY: ''`
   
@@ -37,5 +39,6 @@ Elementos necesarios 📦
   
   `FEDEX_MODE: 'development'`
   
+NOTA: Si la aplicación marca error de webpacker ejecutar el siguiente comando: `bundle exec rails webpacker:install`
 
 Ahora a disfrutar nuestra aplicación 😊 
