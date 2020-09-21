@@ -40,7 +40,7 @@ Elementos necesarios:
   `FEDEX_MODE: 'development'`
   
 * Ejecute el siguiente comando para la ejecución de Pruebas:
-    `spec spec`
+    `rspec spec`
     
 NOTA: Si la aplicación marca error de webpacker ejecutar el siguiente comando: `bundle exec rails webpacker:install`
 
